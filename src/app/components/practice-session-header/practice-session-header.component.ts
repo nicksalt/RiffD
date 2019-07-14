@@ -10,7 +10,6 @@ export class PracticeSessionHeaderComponent implements OnInit {
   @Input() sessionInfo;
   // TODO actually grab params (but can fallback to some default dummy values for prototype)
   constructor() { 
-    console.log(this.sessionInfo);
   }
   
   ngOnInit() {}
