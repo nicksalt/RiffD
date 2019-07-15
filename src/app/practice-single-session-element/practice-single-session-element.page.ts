@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-practice-single-session-element',
@@ -15,7 +16,7 @@ export class PracticeSingleSessionElementPage implements OnInit {
 
   }
 
-  constructor() { 
+  constructor(private router: Router) { 
     
   }
 
@@ -27,6 +28,10 @@ export class PracticeSingleSessionElementPage implements OnInit {
     setInterval(function() {
       this.timeRemaining = this.timeRemaining - 1;
     }, 1000);
+  }
+
+  cancelSession() {
+    this.router.navigate(["/practice-select-module"])
   }
 
 }

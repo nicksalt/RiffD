@@ -16,8 +16,10 @@ export class ModuleSelectComponent implements OnInit {
   ngOnInit() {}
 
   getModule() {
-    console.log("NOT IMPLEMENTED");
-    // TODO navigate to next page
-    this.router.navigate(["/practice-module-practice"])
+    if (this.module.completed) {
+      alert("You've already completed this section!");
+    } else {
+      this.router.navigate(["/practice-module-practice"])
+    }
   }
 }
