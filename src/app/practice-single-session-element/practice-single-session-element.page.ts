@@ -10,14 +10,9 @@ import { Router } from '@angular/router';
 export class PracticeSingleSessionElementPage implements OnInit {
 
   sessionInfo = {};
-  timeRemaining = "0:30";
-
-  prettyPrintTimeRemaining() {
-
-  }
-
+  timeRemaining = "0:10";
+  timer;
   constructor(private router: Router) { 
-
   }
 
   ngOnInit() {
@@ -25,29 +20,35 @@ export class PracticeSingleSessionElementPage implements OnInit {
       title: "Preset Practice #1",
       subtitle: "Scales",
     };
-    let currentTime = 30; // seconds
+
+    // Countdown timer
+    let secondsString: string;
+    let currentTime = 10; // seconds
     let timeRemaining = document.getElementById("timeRemaining");
-    let timer = setInterval(function() {
-      console.log("FIRING");
+    this.timer = setInterval(function() {
       currentTime = currentTime - 1;
       let minutes = parseInt(currentTime / 60);
       let seconds = currentTime % 60;
       if (currentTime === 0) {
         minutes = 0;
         seconds = 0;
-        
-        clearInterval(timer);
+        timeRemaining.innerHTML = `${minutes}:${seconds}`;
+        alert("Congratulations! Click here to go back to your session overview");
+        window.location = "./practice-select-module";
+        clearInterval(this.timer);
       }
 
       if (seconds < 10) {
-        seconds = "0" + parseInt(seconds);
+        secondsString = "0" + parseInt(seconds.toString());
+      } else {
+        secondsString = seconds.toString();
       }
-      timeRemaining.innerHTML = `${minutes}:${seconds}`;
+      timeRemaining.innerHTML = `${minutes}:${secondsString}`;
     }, 1000);
   }
 
   cancelSession() {
+    clearInterval(this.timer);
     this.router.navigate(["/practice-select-module"])
   }
-
 }
