@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class PracticeSingleSessionElementPage implements OnInit {
 
   sessionInfo = {};
-  timeRemaining = "0:10";
+  timeRemaining = "0:15";
   timer;
   constructor(private router: Router) { 
   }
@@ -23,11 +23,11 @@ export class PracticeSingleSessionElementPage implements OnInit {
 
     // Countdown timer
     let secondsString: string;
-    let currentTime = 2; // seconds
+    let currentTime = 15; // seconds
     let timeRemaining = document.getElementById("timeRemaining");
     this.timer = setInterval(function() {
       currentTime = currentTime - 1;
-      let minutes = parseInt(currentTime / 60);
+      let minutes = parseInt((currentTime / 60).toString());
       let seconds = currentTime % 60;
       if (currentTime === 0) {
         minutes = 0;
@@ -49,6 +49,6 @@ export class PracticeSingleSessionElementPage implements OnInit {
 
   cancelSession() {
     clearInterval(this.timer);
-    this.router.navigate(["/practice-select-module"], { queryParams: {allDone: "true"}})
+    this.router.navigate(["practice-select-module"]);
   }
 }

@@ -48,6 +48,6 @@ export class PracticeSelectModulePage implements OnInit {
       total: this.total,
       title: this.title,
     }
-    // console.log(this.router.queryParams);
+    
   }
 }
