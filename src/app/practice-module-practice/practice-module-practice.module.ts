@@ -6,7 +6,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { PracticeModulePracticePage } from './practice-module-practice.page';
-import { PracticeSessionHeaderComponent } from '../components/practice-session-header/practice-session-header.component';
 
 const routes: Routes = [
   {

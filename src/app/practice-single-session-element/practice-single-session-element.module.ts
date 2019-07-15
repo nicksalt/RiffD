@@ -6,7 +6,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { PracticeSingleSessionElementPage } from './practice-single-session-element.page';
-import { PracticeSessionHeaderComponent } from '../components/practice-session-header/practice-session-header.component';
 
 const routes: Routes = [
   {
@@ -22,6 +21,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [PracticeSingleSessionElementPage, PracticeSessionHeaderComponent]
+  declarations: [PracticeSingleSessionElementPage]
 })
 export class PracticeSingleSessionElementPageModule {}
