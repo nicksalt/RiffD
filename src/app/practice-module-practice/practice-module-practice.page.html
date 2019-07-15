@@ -5,7 +5,27 @@
 </ion-header>
 
 <ion-content>
-  <app-practice-session-header [sessionInfo]="sessionInfo"></app-practice-session-header>
+  <ion-card class="card-no-shadow">
+      <ion-card-header>
+        <ion-card-title>
+          <img src="../../assets/guitar.png" style="height: 48px; width: 48px; display: inline-block" />
+          <span style="position: relative; top: -20px; left: 20px; text-decoration: underline">{{sessionInfo["title"]}}</span>
+        </ion-card-title>
+        <ion-card-subtitle>
+          <span *ngIf="sessionInfo['completed']; then progress else subtitle"></span>
+          <ng-template #progress>
+            <div style="padding: 10px; text-align: center; border: 1px solid black; margin: 0 auto; max-width: 50%">
+            {{sessionInfo["completed"].toString()}}/{{sessionInfo["total"].toString()}} completed
+            </div>
+          </ng-template>
+          <ng-template #subtitle>
+            <div style="padding: 10px; text-align: center; border: 1px solid black; margin: 0 auto; max-width: 50%">
+              {{sessionInfo["subtitle"]}}
+            </div>
+          </ng-template>
+        </ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
 
   <ion-card>
     <ion-card-content>

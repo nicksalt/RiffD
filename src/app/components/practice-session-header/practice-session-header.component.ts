@@ -12,6 +12,7 @@ export class PracticeSessionHeaderComponent implements OnInit {
   constructor() { 
   }
   
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
 }
