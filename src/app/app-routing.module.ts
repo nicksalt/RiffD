@@ -6,10 +6,12 @@ const routes: Routes = [
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
   { path: 'login-signup', loadChildren: './login-signup/login-signup.module#LoginSignupPageModule' },
   { path: 'signup', loadChildren: './signup/signup.module#SignupPageModule' },
-  {path: 'start-session', loadChildren: './practice/start-session/start-session.module#StartSessionPageModule'},
   // tslint:disable-next-line: max-line-length
-  {path: 'practice-module-practice', loadChildren: './practice-module-practice/practice-module-practice.module#PracticeModulePracticePageModule'},
-  {path: 'practice-select-module', loadChildren: './practice-select-module/practice-select-module.module#PracticeSelectModulePageModule'}
+  { path: 'start-session', loadChildren: './practice/start-session/start-session.module#StartSessionPageModule' },
+  { path: 'practice-select-module', loadChildren: './practice-select-module/practice-select-module.module#PracticeSelectModulePageModule'},
+  { path: 'practice-module-practice', loadChildren: './practice-module-practice/practice-module-practice.module#PracticeModulePracticePageModule' },
+  { path: 'practice-single-session-element', loadChildren: './practice-single-session-element/practice-single-session-element.module#PracticeSingleSessionElementPageModule' },
+  { path: 'select-custom-practice', loadChildren: './select-custom-practice/select-custom-practice.module#SelectCustomPracticePageModule' }
 ];
 
 @NgModule({

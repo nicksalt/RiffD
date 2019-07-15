@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PracticeSessionHeaderComponent } from './practice-session-header.component';
+import { PracticeSingleSessionElementPage } from './practice-single-session-element.page';
 
-describe('PracticeSessionHeaderComponent', () => {
-  let component: PracticeSessionHeaderComponent;
-  let fixture: ComponentFixture<PracticeSessionHeaderComponent>;
+describe('PracticeSingleSessionElementPage', () => {
+  let component: PracticeSingleSessionElementPage;
+  let fixture: ComponentFixture<PracticeSingleSessionElementPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PracticeSessionHeaderComponent ],
+      declarations: [ PracticeSingleSessionElementPage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PracticeSessionHeaderComponent);
+    fixture = TestBed.createComponent(PracticeSingleSessionElementPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

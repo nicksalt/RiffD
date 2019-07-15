@@ -5,12 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PracticeModulePracticePage } from './practice-module-practice.page';
+import { PracticeSingleSessionElementPage } from './practice-single-session-element.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: PracticeModulePracticePage
+    component: PracticeSingleSessionElementPage
   }
 ];
 
@@ -21,6 +21,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [PracticeModulePracticePage]
+  declarations: [PracticeSingleSessionElementPage]
 })
-export class PracticeModulePracticePageModule {}
+export class PracticeSingleSessionElementPageModule {}

@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>practice_select_module</ion-title>
+    <ion-title>practice-single-session-element</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -25,11 +25,13 @@
         </ng-template>
       </ion-card-subtitle>
     </ion-card-header>
-  </ion-card>
-  <span *ngFor="let module of modulesData">
-  <app-module-select [module]="module"></app-module-select>
-  </span>
-  <ion-card style="-webkit-box-shadow: none; box-shadow: none">
-    <img class="footer-guitar-img" src="assets/guitar_transparent.svg"/>
+  </ion-card>      
+
+  <ion-card>
+    <ion-card-title  style="text-align: center; margin-top: 10px;">Time remaining: <span id="timeRemaining">{{timeRemaining}}</span></ion-card-title>
+    <ion-card-content>
+      <img src="../../assets/vibrato.svg" />
+      <ion-button expand="block" fill="outline" color="danger" style="margin-top: 20px" (click)="cancelSession()">Cancel</ion-button>
+    </ion-card-content>
   </ion-card>
 </ion-content>

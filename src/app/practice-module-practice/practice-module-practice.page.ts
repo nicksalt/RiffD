@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-practice-module-practice',
@@ -12,7 +13,7 @@ export class PracticeModulePracticePage implements OnInit {
 
   sessionInfo = {};
 
-  constructor() {
+  constructor(private router: Router) {
     this.times = function() {
      let timeArr = new Array(29);
      let i;
@@ -37,5 +38,12 @@ export class PracticeModulePracticePage implements OnInit {
       title: "Preset Practice #1",
       subtitle: "Scales",
     }
+  }
+
+  startPractice() {
+    this.router.navigate(["/practice-single-session-element"])
+  }
+  playSample() {
+    alert("A sample");
   }
 }

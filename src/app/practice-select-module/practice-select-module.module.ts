@@ -6,7 +6,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { PracticeSelectModulePage } from './practice-select-module.page';
-import { PracticeSessionHeaderComponent } from '../components/practice-session-header/practice-session-header.component';
 import { ModuleSelectComponent } from '../components/module-select/module-select.component';
 
 const routes: Routes = [
@@ -23,6 +22,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [PracticeSelectModulePage, PracticeSessionHeaderComponent, ModuleSelectComponent]
+  declarations: [PracticeSelectModulePage, ModuleSelectComponent]
 })
 export class PracticeSelectModulePageModule {}
