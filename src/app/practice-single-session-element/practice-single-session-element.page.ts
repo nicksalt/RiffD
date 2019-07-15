@@ -34,7 +34,7 @@ export class PracticeSingleSessionElementPage implements OnInit {
         seconds = 0;
         timeRemaining.innerHTML = `${minutes}:${seconds}`;
         alert("Congratulations! Click here to go back to your session overview");
-        window.location = "./practice-select-module";
+        window.location.href =  "/practice-select-module";
         clearInterval(this.timer);
       }
 
