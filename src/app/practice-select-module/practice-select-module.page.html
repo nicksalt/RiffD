@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>practice_select_module</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-practice-session-header [sessionInfo]="sessionInfo"></app-practice-session-header>
+  <span *ngFor="let module of modulesData">
+    <app-module-select [module]="module"></app-module-select>
+  </span>
+  <ion-card style="-webkit-box-shadow: none; box-shadow: none">
+    <img class="footer-guitar-img" src="assets/guitar_transparent.svg"/>
+  </ion-card>
+</ion-content>
