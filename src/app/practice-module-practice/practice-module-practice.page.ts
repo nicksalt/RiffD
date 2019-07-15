@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PracticeModulePracticePage implements OnInit {
 
-  times: Array;
-  bpms: Array;
+  times: Array<string>;
+  bpms: Array<number>;
 
   sessionInfo = {};
 
