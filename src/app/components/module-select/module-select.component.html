@@ -1,0 +1,18 @@
+<ion-card style="border: 1px solid black; background-color: #FFF;" (click)="getModule()">
+    <ion-card-content>
+      <div style="display: inline-block;">
+          <span *ngIf="module['completed']; then with_complete else not_complete"></span>
+          <ng-template #with_complete><div style="background-color: green; display: inline-block; margin-left: 16px; width: 48px; height: 48px; border: 1px solid black; border-radius: 100%"></div></ng-template>
+          <ng-template #not_complete><div style="display: inline-block; margin-left: 16px; width: 48px; height: 48px; border: 1px solid black; border-radius: 100%"></div></ng-template>
+        <div style="display: inline-block; vertical-align: top; margin-left: 40px; font-size: 2.2em; color: black;">{{module['title']}}</div>
+      </div>
+      <div style="text-align: left; float: right; margin-right: 30px; margin-top: 5px; position: relative">
+        <p>Time: {{module['time']}}</p>
+        <div style="margin: 5px 0;"></div>
+        <p>BPM: {{module['bpm']}}</p>
+        <div *ngIf="!module['completed']" style="position: absolute; bottom: 0px; left: 80px; padding:0; margin: 0">
+          <ion-icon name="arrow-dropright" size="large" style="color: green"></ion-icon>
+        </div>
+      </div>
+  </ion-card-content>
+</ion-card>
