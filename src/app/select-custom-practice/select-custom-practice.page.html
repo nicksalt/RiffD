@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>select_custom_practice</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-list>
+      <span *ngFor="let item of customPractices">
+        <ion-item (click)="startScheduledPractice()">
+          {{item}}
+        </ion-item>
+      </span>
+    </ion-list>
+    <img class="footer-guitar-img" src="assets/guitar_transparent.svg" />
+  </ion-card>
+</ion-content>

@@ -17,7 +17,7 @@ export class StartSessionPage implements OnInit {
     this.router.navigate(["/practice-select-module"])
   }
 
-  comingSoon() {
-    alert("This feature is coming soon!");
+  selectCustomPractice() {
+    this.router.navigate(["/select-custom-practice"])
   }
 }
