@@ -23,7 +23,7 @@ export class PracticeSingleSessionElementPage implements OnInit {
 
     // Countdown timer
     let secondsString: string;
-    let currentTime = 10; // seconds
+    let currentTime = 2; // seconds
     let timeRemaining = document.getElementById("timeRemaining");
     this.timer = setInterval(function() {
       currentTime = currentTime - 1;
@@ -49,6 +49,6 @@ export class PracticeSingleSessionElementPage implements OnInit {
 
   cancelSession() {
     clearInterval(this.timer);
-    this.router.navigate(["/practice-select-module"])
+    this.router.navigate(["/practice-select-module"], { queryParams: {allDone: "true"}})
   }
 }
