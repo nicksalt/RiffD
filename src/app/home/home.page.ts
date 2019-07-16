@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage';
-
+import {ModuleSelectOverrideService } from '../services/module_select_override.service';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -11,12 +11,13 @@ export class HomePage {
   title = 'Home';
   name = 'Welcome';
 
-  constructor(private storage: Storage) {
+  constructor(private storage: Storage, private moduleSelectService: ModuleSelectOverrideService) {
   
   }
 
   ionViewWillEnter(){
-    console.log("CALLED!");
+    this.moduleSelectService.reset();
+
     this.storage.get('name').then((val) => {
       this.name = 'Welcome, ' + val;
     })

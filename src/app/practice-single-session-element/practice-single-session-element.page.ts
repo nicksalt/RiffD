@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ModuleSelectOverrideService } from '../services/module_select_override.service';
 
 @Component({
   selector: 'app-practice-single-session-element',
@@ -13,39 +14,47 @@ export class PracticeSingleSessionElementPage implements OnInit {
   timeRemaining = "0:15";
   timer;
   title = 'In Session';
-  constructor(private router: Router) { 
-  }
+  
+  constructor(private router: Router, private moduleSelectService: ModuleSelectOverrideService) {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  ionViewWillEnter() {
+    let component = this; // Need to keep ref to actual page element
     this.sessionInfo = {
       title: "Preset Practice #1",
-      subtitle: "Scales",
+      subtitle: "Vibrato",
     };
-
     // Countdown timer
     let secondsString: string;
     let currentTime = 15; // seconds
     let timeRemaining = document.getElementById("timeRemaining");
-    this.timer = setInterval(function() {
+    this.timer = setInterval(() => {
       currentTime = currentTime - 1;
       let minutes = parseInt((currentTime / 60).toString());
       let seconds = currentTime % 60;
-      if (currentTime === 0) {
+      if (currentTime === -1) {
+        component.moduleSelectService.toggleOverride();
         minutes = 0;
         seconds = 0;
         timeRemaining.innerHTML = `${minutes}:${seconds}`;
         alert("Congratulations! Click here to go back to your session overview");
-        window.location.href =  "/practice-select-module";
+        component.router.navigate(["practice-select-module"])
         clearInterval(this.timer);
-      }
-
-      if (seconds < 10) {
-        secondsString = "0" + parseInt(seconds.toString());
+        return;
       } else {
-        secondsString = seconds.toString();
+        if (seconds < 10) {
+          secondsString = "0" + parseInt(seconds.toString());
+        } else {
+          secondsString = seconds.toString();
+        }
+        timeRemaining.innerHTML = `${minutes}:${secondsString}`;
       }
-      timeRemaining.innerHTML = `${minutes}:${secondsString}`;
     }, 1000);
+  }
+
+  ionViewWillLeave() {
+    clearInterval(this.timer);
   }
 
   cancelSession() {
