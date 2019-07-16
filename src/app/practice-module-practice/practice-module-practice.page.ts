@@ -10,7 +10,7 @@ export class PracticeModulePracticePage implements OnInit {
 
   times: Array<string>;
   bpms: Array<number>;
-  title = 'Scales';
+  title = 'Vibrato';
   sessionInfo = {};
 
   constructor(private router: Router) {
@@ -36,7 +36,7 @@ export class PracticeModulePracticePage implements OnInit {
   ngOnInit() {
     this.sessionInfo = {
       title: "Preset Practice #1",
-      subtitle: "Scales",
+      subtitle: "Vibrato",
     }
   }
 

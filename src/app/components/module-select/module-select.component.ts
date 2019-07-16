@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import { ModuleSelectOverrideService } from '../../services/module_select_override.service';
 
 @Component({
   selector: 'app-module-select',

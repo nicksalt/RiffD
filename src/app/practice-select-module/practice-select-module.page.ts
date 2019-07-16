@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ModuleSelectOverrideService } from '../services/module_select_override.service';
 
 @Component({
   selector: 'app-practice-select-module',
@@ -16,13 +17,13 @@ export class PracticeSelectModulePage implements OnInit {
 
   modulesData = [
     {
-      title: "Scales",
+      title: "Vibrato",
       time: "5:00",
       bpm: "60",
       completed: false,
     },
     {
-      title: "Vibrato",
+      title: "Scales",
       time: "10:00",
       bpm: "100",
       completed: true,
@@ -36,18 +37,27 @@ export class PracticeSelectModulePage implements OnInit {
   ]
 
   // TODO grab by params
-  constructor(private router: Router) { 
-    this.completed = 2;
-    this.total = 3;
-    this.title = "Preset Practice #1";
-  }
+  constructor(private router: Router, private moduleSelectService: ModuleSelectOverrideService) {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  ionViewWillEnter() {
+    if (this.moduleSelectService.getOverride()) {
+      this.completed = 3;
+      this.total = 3;
+      this.title = "Preset Practice #1";
+      this.modulesData[0].completed = true; // prototype hack
+    } else {
+      this.completed = 2;
+      this.total = 3;
+      this.title = "Preset Practice #1";
+      this.modulesData[0].completed = false; // prototype hack
+    }
+
     this.sessionInfo = {
-      completed: this.completed,
+      completed: (this.moduleSelectService.getOverride() ? 3 : this.completed),
       total: this.total,
       title: this.title,
     }
-    
   }
 }
