@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,17 @@ import { Component } from '@angular/core';
 export class HomePage {
 
   title = 'Home';
+  name = 'Welcome';
 
-  constructor() {}
+  constructor(private storage: Storage) {
+  
+  }
+
+  ionViewWillEnter(){
+    console.log("CALLED!");
+    this.storage.get('name').then((val) => {
+      this.name = 'Welcome, ' + val;
+    })
+  }
 
 }
