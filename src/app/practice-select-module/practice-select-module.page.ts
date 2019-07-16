@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-practice-select-module',
@@ -36,7 +36,7 @@ export class PracticeSelectModulePage implements OnInit {
   ]
 
   // TODO grab by params
-  constructor() { 
+  constructor(private router: Router) { 
     this.completed = 2;
     this.total = 3;
     this.title = "Preset Practice #1";
@@ -48,5 +48,6 @@ export class PracticeSelectModulePage implements OnInit {
       total: this.total,
       title: this.title,
     }
+    
   }
 }

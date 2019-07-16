@@ -33,43 +33,13 @@
         </ng-template>
       </ion-card-subtitle>
     </ion-card-header>
-  </ion-card>
+  </ion-card>      
 
   <ion-card>
+    <ion-card-title  style="text-align: center; margin-top: 10px;">Time remaining: <span id="timeRemaining">{{timeRemaining}}</span></ion-card-title>
     <ion-card-content>
-        The goal of this drill is to work on the smoothness of your vibrato technique. Try to keep your vibrato in time with the metronome. Strive for consistency and control!
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-content>
-      <ion-list>
-        <ion-item>
-          <ion-label>Time:</ion-label>
-          <ion-select value="5">
-            <span *ngFor="let item of times">
-              <ion-select-option value={{item.toString()}}>{{item.toString()}}:00</ion-select-option>
-            </span>
-          </ion-select>
-        </ion-item>
-        <ion-item>
-          <ion-label>BPM:</ion-label>
-          <ion-select value="60">
-            <span *ngFor="let bpm of bpms">
-              <ion-select-option value={{bpm.toString()}}>{{bpm}}</ion-select-option>
-            </span>
-          </ion-select>
-        </ion-item>
-        <ion-item>
-          <ion-label>Record practice</ion-label>
-          <ion-toggle slot="end" color="success" name="record" checked></ion-toggle>
-        </ion-item>
-      </ion-list>
-
-      <ion-button class="practice-select-button"  expand="block" color="primary" (click)="startPractice()">Start practice</ion-button>
-      <ion-button class="practice-select-button"  expand="block" color="dark" fill="outline" (click)="playSample()">Listen to sample</ion-button>
-
-      <img class="footer-guitar-img" src="assets/guitar_transparent.svg" />
+      <img src="../../assets/vibrato.svg" />
+      <ion-button expand="block" fill="outline" color="danger" style="margin-top: 20px" (click)="cancelSession()">Cancel</ion-button>
     </ion-card-content>
   </ion-card>
 </ion-content>
