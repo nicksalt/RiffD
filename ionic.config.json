@@ -1,5 +1,7 @@
 {
   "name": "RiffD",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

@@ -18,6 +18,8 @@ export class SelectCustomPracticePage implements OnInit {
     "Fingerpicking and syncopation"
   ]
 
+  title = 'Select Custom Practice';
+
   constructor(private router: Router) { }
 
   ngOnInit() {

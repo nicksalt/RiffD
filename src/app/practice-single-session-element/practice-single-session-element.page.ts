@@ -12,6 +12,7 @@ export class PracticeSingleSessionElementPage implements OnInit {
   sessionInfo = {};
   timeRemaining = "0:15";
   timer;
+  title = 'In Session';
   constructor(private router: Router) { 
   }
 

@@ -10,7 +10,7 @@ export class PracticeModulePracticePage implements OnInit {
 
   times: Array<string>;
   bpms: Array<number>;
-
+  title = 'Scales';
   sessionInfo = {};
 
   constructor(private router: Router) {

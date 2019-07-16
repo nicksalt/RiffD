@@ -1,26 +1,32 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+  <ion-toolbar mode="ios">
+    <!--<ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+    </ion-buttons>-->
+
+    <ion-title>{{title}}</ion-title>
+
+    <!--<ion-button slot="end" fill='clear' routerLink='/home'>
+        <ion-icon slot="icon-only" name="home"></ion-icon>
+    </ion-button>-->
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="welcome">
+  <div class="welcome" >
     <div class="image">
       <img src="../../assets/_ionicons_svg_md-contact.svg"/>
     </div>
     <h3>Welcome, NAME</h3>
   </div>
   <div class="actions">
-    <div class="action">
+    <div class="action" routerLink="../start-session">
       <div class="icon">
         <img src="../../assets/guitar.png"/>
       </div>
       <h6>Start a Practice Session</h6>
     </div>
-    <div class="action">
+    <div class="action" routerLink='../schedule'>
       <div class="icon">
         <img src="../../assets/_ionicons_svg_md-calendar.svg"/>
       </div>

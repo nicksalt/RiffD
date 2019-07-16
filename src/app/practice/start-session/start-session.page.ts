@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 })
 export class StartSessionPage implements OnInit {
 
+  title = 'Start Session';
+
   constructor(private router: Router) { }
 
   ngOnInit() {
