@@ -1,3 +1,13 @@
+<ion-header>
+    <ion-toolbar mode="ios">
+      <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+      </ion-buttons>
+  
+      <ion-title>{{title}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
 <ion-content>
 <div class="logo-container">
   <img src="../../assets/RiffD_Logo.png"/>
@@ -5,24 +15,24 @@
 <div class="form">
   <ion-item>
     <ion-label position="stacked">First Name <ion-text>*</ion-text></ion-label>
-    <ion-input required type="text"></ion-input>
+    <ion-input required autocapitalize='true' type="text" [(ngModel)]="fName"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="stacked">Last Name <ion-text>*</ion-text></ion-label>
-    <ion-input required type="text"></ion-input>
+    <ion-input required autocapitalize='true' type="text" [(ngModel)]="lName"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="stacked">Email <ion-text>*</ion-text></ion-label>
-    <ion-input required type="email"></ion-input>
+    <ion-input required type="email" [(ngModel)]="email"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="stacked">Password <ion-text>*</ion-text></ion-label>
-    <ion-input required type="password"></ion-input>
+    <ion-input required type="password" [(ngModel)]="password"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="stacked">Confirm Password <ion-text>*</ion-text></ion-label>
-    <ion-input required type="password"></ion-input>
+    <ion-input required type="password" [(ngModel)]="confirmPassword"></ion-input>
   </ion-item>
 </div>
-<ion-button expand="block" fill="outline">Sign Up</ion-button>
+<ion-button expand="block" fill="outline" (click)="submit()">Sign Up</ion-button>
 </ion-content>
