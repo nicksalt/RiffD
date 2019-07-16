@@ -9,7 +9,9 @@ const routes: Routes = [
   {path: 'start-session', loadChildren: './practice/start-session/start-session.module#StartSessionPageModule'},
   // tslint:disable-next-line: max-line-length
   {path: 'practice-module-practice', loadChildren: './practice-module-practice/practice-module-practice.module#PracticeModulePracticePageModule'},
-  {path: 'practice-select-module', loadChildren: './practice-select-module/practice-select-module.module#PracticeSelectModulePageModule'}
+  {path: 'practice-select-module', loadChildren: './practice-select-module/practice-select-module.module#PracticeSelectModulePageModule'},  { path: 'schedule', loadChildren: './schedule/schedule.module#SchedulePageModule' },
+  { path: 'schedule-day', loadChildren: './schedule-day/schedule-day.module#ScheduleDayPageModule' }
+
 ];
 
 @NgModule({

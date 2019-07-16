@@ -1,19 +1,19 @@
 <ion-header>
   <ion-toolbar mode="ios">
-    <ion-buttons slot="start">
-      <img class="logo-nav" src="../../assets/logo_nav.png"/>
-    </ion-buttons>
+    <!--<ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+    </ion-buttons>-->
 
     <ion-title>{{title}}</ion-title>
 
-    <!----><ion-button slot="end" fill='clear'>
+    <!--<ion-button slot="end" fill='clear' routerLink='/home'>
         <ion-icon slot="icon-only" name="home"></ion-icon>
     </ion-button>-->
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="welcome">
+  <div class="welcome" routerLink="./practice-select-module">
     <div class="image">
       <img src="../../assets/_ionicons_svg_md-contact.svg"/>
     </div>

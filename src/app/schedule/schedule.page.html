@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>schedule</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding='true'>
+  <p *ngIf="!scheduleExist">It looks like you haven't set a schedule. Press the add button below to create one now.</p>
+  <div class="schedule" *ngIf="scheduleExist">
+    <ion-list>
+      <ion-item color="primary">
+            <ion-label>Monday</ion-label>
+          </ion-item>
+      <ion-item *ngFor ="let practice of monday">
+          <ion-label>{{practice.practiceType}}</ion-label>
+          <ion-note slot="end" color="secondary">{{practice.time}}</ion-note>
+      </ion-item>
+      <ion-item color="primary">
+            <ion-label>Tuesday</ion-label>
+          </ion-item>
+      <ion-item *ngFor ="let practice of tuesday">
+          <ion-label>{{practice.practiceType}}</ion-label>
+          <ion-note slot="end" color="secondary">{{practice.time}}</ion-note>
+      </ion-item>
+      <ion-item color="primary">
+            <ion-label>Wednesday</ion-label>
+          </ion-item>
+      <ion-item *ngFor ="let practice of wednesday">
+          <ion-label>{{practice.practiceType}}</ion-label>
+          <ion-note slot="end" color="secondary">{{practice.time}}</ion-note>
+      </ion-item>
+      <ion-item color="primary">
+            <ion-label>Thursday</ion-label>
+          </ion-item>
+      <ion-item *ngFor ="let practice of thursday">
+          <ion-label>{{practice.practiceType}}</ion-label>
+          <ion-note slot="end" color="secondary">{{practice.time}}</ion-note>
+      </ion-item>
+      <ion-item color="primary">
+            <ion-label>Friday</ion-label>
+          </ion-item>
+      <ion-item *ngFor ="let practice of friday">
+          <ion-label>{{practice.practiceType}}</ion-label>
+          <ion-note slot="end" color="secondary">{{practice.time}}</ion-note>
+      </ion-item>
+      <ion-item color="primary">
+            <ion-label>Saturday</ion-label>
+          </ion-item>
+      <ion-item *ngFor ="let practice of saturday">
+          <ion-label>{{practice.practiceType}}</ion-label>
+          <ion-note slot="end" color="secondary">{{practice.time}}</ion-note>
+      </ion-item>
+      <ion-item color="primary">
+            <ion-label>Sunday</ion-label>
+          </ion-item>
+      <ion-item *ngFor ="let practice of sunday">
+          <ion-label>{{practice.practiceType}}</ion-label>
+          <ion-note slot="end" color="secondary">{{practice.time}}</ion-note>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div class="button">
+    <ion-button routerLink="/schedule-day">
+      <ion-icon slot="start" name="add"></ion-icon>
+        Add a Day
+    </ion-button>
+  </div>
+</ion-content>
