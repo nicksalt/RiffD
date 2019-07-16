@@ -14,7 +14,9 @@ const routes: Routes = [
   { path: 'schedule-day', loadChildren: './schedule-day/schedule-day.module#ScheduleDayPageModule' },
   { path: 'select-custom-practice', loadChildren: './select-custom-practice/select-custom-practice.module#SelectCustomPracticePageModule'},
   // tslint:disable-next-line: max-line-length
-  { path: 'practice-single-session-element', loadChildren: './practice-single-session-element/practice-single-session-element.module#PracticeSingleSessionElementPageModule'}
+  { path: 'practice-single-session-element', loadChildren: './practice-single-session-element/practice-single-session-element.module#PracticeSingleSessionElementPageModule'},  { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
+  { path: 'review', loadChildren: './review/review.module#ReviewPageModule' }
+
 ]
 
 
